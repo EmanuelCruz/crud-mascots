@@ -1,3 +1,2 @@
 <?php
-echo "hola"
-echo "Ema";
+trigger_error("error al escribir",E_USER_ERROR);
