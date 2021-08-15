@@ -1,0 +1,11 @@
+{
+    "name": "emanuelcruz/crud-mascot",
+    "description": "Crud of mascots and owners",
+    "authors": [
+        {
+            "name": "EmanuelCruz"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}

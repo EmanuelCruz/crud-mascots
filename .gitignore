@@ -169,6 +169,9 @@ modules.xml
 
 /.idea
 
+composer.phar
+/vendor/
+
 ### My
 # Documentation Folder
 doc
