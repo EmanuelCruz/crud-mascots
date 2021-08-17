@@ -8,7 +8,9 @@ class Connection
     private string $user;
     private string $password;
     private string $dbName;
-    private string $charset = 'utf8';
+    private string $dbPort;
+
+//    private string $charset = 'utf8';
 
     public function conexion()
     {
@@ -22,9 +24,10 @@ class Connection
             $this->user = $_ENV["DB_USER"];
             $this->password = $_ENV["DB_PASSWORD"];
             $this->dbName = $_ENV["DB_NAME"];
+            $this->dbPort = $_ENV["DB_PORT"];
 
-            $pdo = new PDO("{$this->driver}:host={$this->host};dbname={$this->dbName};charset={$this->charset}", $this->user, $this->password);
-            $pdo->setAttribute(\PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $pdo = new PDO("{$this->driver}:host={$this->host};port={$this->dbPort};dbname={$this->dbName};", $this->user, $this->password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+//            $pdo->setAttribute(\PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             // ATTR_ERRMODE: Reporte de errores
             // ERRMODE_EXCEPTION: Lanza exceptions que las va a capturar PDOException
             return $pdo;
